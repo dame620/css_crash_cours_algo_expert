@@ -1,0 +1,45 @@
+div {
+    /*position fixed allow us to create stacking context in order to be able z-index
+    z-index is kind of third orientation*/
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    font-size: 1.5rem;
+    padding: 1em;
+}
+
+#red {
+    /*red and blue are at the same level if z-index of red is higher than z-inex of blue
+    red will be up to blue*/
+    z-index: 4;
+    background-color: red;
+    top: 0;
+    left: 0;
+
+}
+
+#blue {
+    z-index: 2;
+    background-color: blue;
+    top: 150px;
+    left: 150px;
+}
+
+#green { 
+    /*if we need the green element to be on the top or bottom of other element let's comparate 
+    the z-index with other elemnets that are at same level to have the full control of it
+    if section z-index if higher than section z-index the green will be on top of other element inside
+    section even if there is some elements inside section that have z-index higher than that is in green*/
+    z-index: 3;
+    background-color: green;
+    top: 200px;
+    left: 200px;
+}
+
+
+section {
+    position: fixed;
+    z-index: 2;
+}
+
+

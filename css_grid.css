@@ -1,0 +1,103 @@
+body > * {
+    border: 5px solid lightblue;
+}
+/*grid-template-columns Determines the number of columns and their sizes. The unit
+    fr can be used as a fractional unit here to create a responsive design.*/
+
+/* grid-template-rows: Determines the number of rows and their sizes. The unit
+     can be used as a fractional unit here to create a responsive design.*/
+
+body {
+    display: grid;
+    /*grid-template-columns Determines the number of columns and their sizes. The unit
+    fr can be used as a fractional unit here to create a responsive design.*/
+    /*ex ici on aura 3 colones avec des width de 100 px 200px and 100px pas trop adapter pour un design responsive on utilisera des fr*/
+    /*grid-template-columns: 100px 200px 100px;*/
+
+    /*on aura ici 3colones le colone du milieu est deux fois plus grands que les deux autre*/
+    grid-template-columns:  [start] 1fr [middle] 2fr [end];
+    /*we can mark the column and rows with allias istead of using grid-column with values 
+    we can use those allias*/
+
+   /* grid-template-rows: Determines the number of rows and their sizes. The unit
+     can be used as a fractional unit here to create a responsive design.*/
+     /*ici nous voulons deux lignes avec la deuxieme deux fois plus heigh que le premier*/
+    grid-template-rows: 1fr 1fr 1fr;
+
+    /*if we wanna set a min value to a row we can use minmax function*/
+    /*si 1fr est plus petit que 200px alors sa largeur sera 200px*/
+    /*exemple: grid-template-columns: minmax(200px, 1fr) 2fr 1fr;*/
+
+    /*if we have a layout with something like this */
+    /* grid-template-columns: 1fr 1fr 1fr;*/
+    /*we can use repeat functiion to replace that*/
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /*grid-template-areas: Creates names for grid areas that grid items can
+    place themselves in.
+    */
+    /**my NB:with grid-template-areas the row number say us how many rows we need with our layout
+    and also column number said how many column we will have**/
+    grid-template-areas: 
+    "header header "
+    "main aside"
+    "footer footer"
+    ;
+    gap: 10px;
+
+    /*just for knowledge but we don't need those proprety*/
+    /*we can use proprity like justify-items to determine how items along the row will be 
+    align along the row*/
+    /*align-items: center;*/
+    /*justify-items: center*/
+    /*place items replace align-items and justify-items*/
+    /*place-items: center;*/
+
+}
+
+    /*if we wanna layout elements inside the grid we can use proprities like this*/   
+
+    header {
+        /*grid-column-start: Determines what column this item starts on, based on
+        a line number.*/
+        /*grid-column-start: 1;
+        /*grid-column-end: Determines what column this item ends on, based on
+        a line number.*/
+        /*grid-column-end: 3;
+        /*instead of that we can use grid-column to replace grid-column-start and grid-column-end*/
+        /*grid-column: A shorthand for both grid-column-start and
+        grid-column-end specified in the format start / end. the first value replace grid-column-start and
+        the second value replace grid-column-end*/
+        /*grid-column: 1 / 3;*/
+        /*we can use also with grid-column-start the value span to say this item span on how many column */
+        /*with grid-column-start: span 2; the header will span(occupy) 2 column*/
+        /*grid-column-start: span 2;*/
+        
+        /*grid-row-start: Determines what row this item starts on, based on
+        a line number.*/
+        /*grid-row-start: 1;
+        grid-row-end: 3;*/
+        /*grid-row-end: Determines what row this item ends on, based on
+        a line number.*/
+
+        /*we have same proprities with grid row to replace grid-row-start and grid-row-end*/
+        /*grid-row: 1 / 3;*/
+        
+        /*grid-row: A shorthand for both grid-row-start and
+        grid-row-end specified in the format start / end.*/
+        /*here we use allias that we create on grit-template-column*/
+        /*grid-column: start / endmiddlebeforeend;*/
+        /*grid-column: 1 / 3;*/
+        /*we use grid-area to align elements based on grid-template areas that we create above*/
+
+
+        grid-area: header;
+
+        /*we don't use this proprity for now with our layout this is just for knowing*/
+        /*justify-self: center;
+        align-self: center;*/
+        /*place-self: center; will replace those two proprities*/
+    }  
+
+    footer {
+        grid-area: footer;
+    }

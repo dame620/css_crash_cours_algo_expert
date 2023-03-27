@@ -1,0 +1,27 @@
+/*this is a way of using selector we select by using an attribut inside an element*/
+a[href="https://www.algoexpert.io"] {
+    color: green;
+}
+
+/*If we wanna select all element starting by https://www.algoexpert.io we use this one*/
+a[href^="https://www.algoexpert.io"] {
+    color: red;
+}
+
+/*Select direct children*/
+/*select all div childreen paragraph*/
+div > p {
+    color: blue; 
+}
+
+/*sibling elements*/
+/*Select all h2 siblings of type p and color them into green*/
+/*it will select all h2 siblings json and no json*/
+h2 ~ p {
+    color: green;
+}
+
+/*select all paragraph json sublings(first sublings) h2 */
+h2 + p {
+    color: rgb(126, 16, 34);
+}

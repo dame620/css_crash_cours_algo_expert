@@ -1,0 +1,61 @@
+/*RECAP
+ -*block level elements do two things they start with new line and take the entire width of there parent, width and height can be change p is block level element
+ -*em is a inline level element inline elements don't start with new line and take the width of there content
+ even if we increase it's width it's not possible to resize width and height
+ -*display: inline-block est au milieu entre block et inline il y'aura pas de retour à la ligne, width par defaut est width du content, ms il y'a 
+  possibilité de redefinir width and height s'il y'a des marge ils sont conserver et s'il n'y a pas ils sont pas creer
+END RECAP*/
+
+/*the paragraph take the entire width of his parent element regardless the length of it's content
+p is a block level element = element de type block
+*/
+/*block level elements do two things they start with new line and take the entire width of there parent width and height can be change*/
+/*Example*/
+/*p {
+    border: 1px solid black;
+}*/
+/*em is a inline level element they don't start with new line and take the width of there content
+even if we increase it's width it's not possible to resize width and height*/
+/*example*/
+/*em {
+    border: 1px solid blue;
+}*/
+
+/*Example here the em element is inline element if we set it's width to 100vw or height to 100vh nothing change
+em {
+    border: 1px solid blue;
+    width: 100vw;
+    height: 100vh;
+}
+*/
+
+/*
+-if we want inline element to act like block element we set display to block and it take
+the entire width of the parent element and also we have possibility to change width and height
+but as paragraph it don't have default margin exemple down below*/
+
+/*em {
+    width: 30vw;
+    height: 50vh;
+    margin: 5px;
+    display: block;
+    border: 1px solid blue;
+}*/
+/*Si on change un element de type block en un element de type inline avec display: inline
+s'il avait une marge comme p(paragraph) il conserve sa marge il n'y a plus de retour à la ligne 
+ni la possibilité de redefinir le width de l'element ou height
+*/
+/*display: inline-block est au milieu entre block et inline il y'aura pas de retour à la ligne ms il y'a 
+possibilité de redefinir width and height s'il y'a des marge ils sont conserver et s'il n'y a pas ils sont pas creer*/
+/*EXAMPLE*/
+p {
+    display: inline-block;
+    width: 30%;
+    border: 1px solid black;
+}
+
+em {
+    display: inline-block;
+    width: 10vw;
+    border: 1px solid blue;
+}

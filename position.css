@@ -1,0 +1,90 @@
+/*position: fixed; the element is positioned relative to the viewport 
+and removed from the normal flow of the document top right bottom and left proprities
+can be used to move the element*/
+/*position: relative; the element is positioned in the same position as it would be with static, 
+however it can be repositioned with top left right and bottom relative to its natural position on the document*/
+/*
+position: sticky; the element will act similar to a relative position once it scroll off screen it will act as a fixed position
+it will stay fixed to the screen it will be useful for menu bar that need to stick to the top of the screen as the user scrolls
+*/
+/*
+position: absolute By default, this will act the same as fixed, except the element 
+will be positioned relative to the document instead of the viewport. This means that,
+as the page is scrolled, it will move with the page rather than stay at
+the same viewport location. however, if any element above it in the dom
+oftentimes referred to as an ancestor, has a position value other than static, 
+then it will be position relative to that nearest position ancestor
+*/
+
+/**
+The float CSS property places an element on the left or right side of its container, 
+allowing text and inline elements to wrap around it. The element is removed from the 
+normal flow of the page, though still remaining a part of the flow 
+**/
+/*
+If we want element to don't take care about float we use clear proprety
+*/
+
+p {
+    font-size: 1.5em;
+    margin: 1.5rem;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+body > p {
+    float: right;
+    background-color: lightblue;
+}
+
+#box {
+    /*comment avec ca l'element sera placer comme s il ne fait plus partie du documentil occupe sa position ms laisse
+    les autres elements suivre leur flow normal end comment */
+    /*position: fixed;*/
+    /*comment avec top l'element est fixer au top du document end comment*/
+    /*top: 0;*/
+    /*end of comment*/
+    /*position: relative; l'element est à sa position normal sur le document mais il a top left right bottom qui lui permet de se
+    deplacer par rapport à sa position qu'il occupe dans le document c'est comme une sorte de margin additionnel qu il a avec top right bottom left*/
+   /* position: relative;
+    top: 10px;*/
+    /*position: sticky; est un melange entre relative et fixed position car lorsq'on applique position: sticky; à un element avant le scroll il est à sa 
+    position normal et lorsqu'on commence à scroller il prend le comportement d'une position fixed*/
+    /*position: sticky;
+    top: 10px;
+    left: 150px;*/
+    /*position: absolute; is very similar to fixed it's kind of it's out of the document rather than be fixed relative to the page on scroll this is fixed 
+    relative to his position the position is relatively position with any element above that have relative position*/
+    /*position: absolute;
+    top: 10px;
+    left: 130px;
+    z-index: 5;*/
+    float: left;
+    width: 15rem;
+    height: 10rem;
+    border: 2px solid black;
+    background-color: lightgreen;
+}
+
+section {
+    border: 1px solid gray;
+}
+
+/*section {*/
+    /*we set this to place the box element relatively to the section element*/
+ /*   position: relative;
+}*/
+
+#long {
+   /*for creating stacking context for example here if we want to place this element above
+   the box we can use position relative to allow z-index to be applied cause z-index can't be apply 
+   with position static*/
+    /*position: relative;
+    z-index: 4;*/
+    /*we use clear to say an element to don't take care about float*/
+    /*clear: both; says go bellow all element that are floating*/
+    /*clear: right; says go bellow the element that floating right*/
+    /*clear: left; says go bellow the element that floating left*/
+    background-color: lightyellow;
+}
+

@@ -1,0 +1,87 @@
+#algo_expert {
+    width: 300px;
+    height: 200px;
+    border: 10px dashed black;
+    padding: 10px;
+    background-image: url('/images/smaImg.jpeg');
+    /*background-size help us to change x and y sizes*/
+   /* background-size: 100px 100px;*/
+    background-size: contain;
+    background-color: brown;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: content-box;
+    /*Les valeurs possible de background-size et ce qu'ils font*/
+    /*background-size: contain;
+    Un mot-clé qui redimensionne l'image afin qu'elle soit la plus grande possible et que l'image conserve ses proportions. L'image est contrainte dans le conteneur
+     Les zones éventuellement vides sont remplies avec la couleur d'arrière-plan (définie grâce à background-color).
+    **/
+    /*
+    background-size: cover;
+    Un mot-clé dont le comportement est opposé à celui de contain. L'image est redimensionnée 
+    pour être aussi grande que possible et pour conserver ses proportions. 
+    L'image couvre toute la largeur ou la hauteur du conteneur et les parties 
+    qui dépassent sont rognées si les proportions du conteneur sont différentes (il n'y a aucun 
+    espace libre sur lequel on verrait la couleur d'arrière-plan).
+
+    LINK:
+
+    https://developer.mozilla.org/fr/docs/Web/CSS/background-size
+    */
+
+    /*
+    La propriété CSS background-repeat définit la façon dont les images utilisées en arrière-plan sont répétées. 
+    Une image d'arrière-plan pourra 
+    ainsi être répétée sur l'axe horizontal, l'axe vertical ou bien ne pas être répétée.
+    LINK:
+    https://developer.mozilla.org/fr/docs/Web/CSS/background-repeat
+    */
+
+    /*
+    background-origin: border-box;
+    border-box: L'arrière-plan est positionné relativement à la boîte de bordure si on a une border 
+    le background-image couvre meme le border.
+
+    padding-box L'arrière-plan est positionné relativement à la boîte de remplissage (padding). si on a un
+    padding le background image couvre le padding;
+
+    content-box L'arrière-plan est positionné relativement à la boîte de contenu. le backgroung image commence 
+    à partir de la zone d'ecriture il ne couvre pas le padding
+
+    */
+
+
+
+    /*The background-clip CSS property specifies whether an element's background, either the color or image, extends underneath its border.
+
+    while
+
+    The background-origin CSS property determines the background positioning area, that is the position of the origin of an image specified using the background-image CSS property.*/
+
+}
+
+img{
+    width: 400px;
+    height: 200px;
+    margin-top: 15px;
+}
+
+#html {
+    width: 256px;
+    height: 256px;
+    background-image: url('images/smaImg2.jpeg');
+    background-position: -586px -12px;
+}
+
+#css {
+    width: 256px;
+    height: 256px;
+    background-image: url('images/smaImg2.jpeg');
+    background-position: -23px -100px;
+}
+
+/*
+if a div is used to set an image we can use role and aria-labeb
+to say what it does
+background-position is to position our background image in the document
+*/

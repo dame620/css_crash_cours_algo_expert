@@ -1,0 +1,30 @@
+/*margin is applied outside the element and don't affect element width and height we use p tag*/
+/*padding is applied in addintionnal of width and height of an element  we use p tag*/
+/*border is just the cover of an element it don't affect element width and height  we use p tag*/
+
+#container {
+    width: 300px;
+    background-color: lightblue;
+}
+
+#child {
+    /**width: 100%; is overflowing with the parent element*/
+    /*to avoid element overflowing we can apply width like this but this is not clean code*/
+    /*width: calc(100% -20px -12px);*/
+    /*To avoid using calc we can use box-sixing property*/
+    /*box-sixing is a css property that specify how width and height should be calculated for selected element*/
+    /*content box for most element, which sets the width and height to only control the size of the content*/
+    /*however if element is overflowing due to padding and border we use box-sizing: border-box;*/
+    /*if we use box-sizing: border-box; the calculation of a width include padding and border*/
+    /*most of the time we set the all element box-sizing: border-box; with this under here it won't be necessar
+    to set an specific element to box-sizing: border-box;
+    *{
+        box-sizing: border-box;
+    }
+    */
+    box-sizing: border-box;
+    width: 100%;
+    border: 10px solid black;
+    padding: 12px;
+    background-color: orange;
+}

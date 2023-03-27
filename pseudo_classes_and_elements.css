@@ -1,0 +1,83 @@
+/*IF WE WORK WITH SPEUDO CLASSES WE HAVE TO THINK LIKE THIS
+-The selected elements that is
+exemple: p:first-child mean the p paragraph that is first child of another parent element
+input:focus mean the input that is focus.
+p:firstoftype mean inside each parent element select the first p element type
+/**
+    difference between p:first-child and p:first-of-type 
+    p:first-child select the p element that is the first child of another parent element
+    p:first-child dans chaque parent il verifie si son premier enfants est p il le selectionne
+
+    p:firstoftype select the the first p type element of another parent element 
+    p:firstoftype dans chaque element parent il selection son premier enfants de type p
+**/
+*/
+
+/*this pseudo class select unvisited element a*/
+a:link {
+    color: red;
+  }
+/*this pseudo class select visited element a (clicked)*/
+a:visited {
+    color: green
+}
+
+input:focus {
+    outline: 2px solid green;
+}
+
+input:invalid:not(:focus) {
+    outline: 2px solid red;
+}
+/*p:first-of-type we have to do go throught the document and for each parent select
+the first child of type p between the siblings*/
+p:first-of-type{
+    color: red;
+}
+/*p:last-of-type we have to do go throught the document and for each parent select
+the last child of type p between the siblings*/
+p:last-of-type{
+    color: blue;
+}
+/*p:nth-of-type(1) p:nth-of-type(2n) or p:nth-of-type(odd) or p:nth-of-type(even) here it will select between the siblings those who are odd, even */
+p:nth-of-type(even){
+    color: rgb(184, 174, 25);
+}
+/*p:last-of-type go throught the document and as first of type select last of type*/
+/*p:first-child go through the document for each parent element check if his first child match the selector in our case is p it will match the selector otherwise it will not*/
+
+p:first-child {
+    background-color: brown;
+}
+
+/*p:nth-child(n) will select a p element corresponding to an even position inside the parent*/
+
+p:nth-child(odd) {
+    background-color: rgb(148, 18, 145);
+}
+
+/*pseudo element use :: double dot*/
+ /*A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s).*/
+/*get first letter of p and apply the directive into it*/
+ p::first-letter {
+    font-size: 2rem;
+ }
+/*will select the first line of each paragraph*/
+ p::first-line{
+    font-weight: bold;
+ }
+
+
+ /*will add this before this selected elements*/
+ p::before {
+    /*content: url('https://algoexpert.io');*/
+    content: 'hello every one';
+    color: blue;
+ }
+
+ h1::after {
+    content: '!';
+ }
+
+ /*if we use something like exclamation point for pseudo element if we see an space between the exclamation
+ point and the last word just closing tag have to be in the same line for deleting the space*/

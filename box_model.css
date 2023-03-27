@@ -1,0 +1,41 @@
+
+p {
+    border: 2px solid black;
+    background-color: rgb(145, 145, 236);
+    padding: 5px;
+    margin: 16px 7px 0 18px;
+}
+
+/*
+-margin: with vertical alignement the margin will colllapse 
+meaning we will just use which margin is bigger and don't add them if there is 
+two margin between two element
+-with horizontal margin we will just adding them rather than tacking the larger one
+*/
+/*
+-If we use: margin with two value it will be just first value will be refer to top and
+bottom and the second value will be refer to right and left margin: 24px 53px;
+-If we use margin with auto the value will be for centring element.
+- margin: 16px auto; will set top and bottom margin of 16px and center horizontaly don't
+forget in this case to set a width to the element if this is element of type block or 
+display is block and take the width of the entire page
+-if we set a margin to an inline element if will be set horizontaly, margin has no affect
+to an inline element verticaly becarfuly inline-block act as block with margin
+Exemple this will set margin horizintaly only but for padding it will be apply vertically 
+and horizontaly
+em {
+    margin: 42px;
+    padding: 14px;
+}
+*/
+
+/*
+radius is the half of the diametre setting border radius to the half of the size of the 
+element we are setting it to the exact length of the element which is creating the exact circle
+border-radius is for round the border but if we wanna get a circle(cercle) we have to
+get an square(carré) same width and height and apply border radius to 50%
+EXEMPLE:
+width: 450px;
+height: 450px
+border-radius: 50%;
+*/

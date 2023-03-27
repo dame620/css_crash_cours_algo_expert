@@ -1,0 +1,23 @@
+body {
+    border: 1px solid black;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /*grid-template-rows: 5fr;*/
+    gap: 3px;
+    align-items: center;
+}
+
+body > *{
+    border: 1px solid orangered;
+    border-radius: 3px;
+    height: 70%;
+
+}
+
+header {
+    margin-left: 50px;
+}
+main {
+    margin-right: 40px;
+}

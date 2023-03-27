@@ -1,0 +1,60 @@
+/* Absolute unit: is not depending on something else, so it's size will be constant regardless 
+of the context. in general the pixel units is the only one of these used in web*/
+/*-px: pixels, absolute lenght*/
+
+/*Relative unit*/
+/*em: this is relative to font size if we use em to set a font size it will be relative to parent fontsize*/
+/*rem is similar to em but it's relative to the the root element(the html) this is 16px but it can be change on html*/
+/*vw is relative to view port width*/
+/*vh is relative to view port height*/
+/*ch is relative to the width of "0"(zero character) in the current font it allow us to set a width based on
+the number of character in the current paragraph*/
+/* % relative to the parent value*/
+/*it is better to use rem for example 2rem = 16*2 = 24px cause the default
+font size is 16px*/
+html{
+    font-size: 24px;
+}
+#parent {
+    font-size: 1.5em;
+    border: 2px solid black;
+    width: 75%;
+}
+/*by default elements has parent font-size if we define font size in em unit
+it will be related to parent font-size 1.5 em = parent font-size * 1.5
+*/
+#red {
+    width: 50%;
+    background-color: red;
+    font-size: 1em;
+}
+
+#blue {
+    width: 50vw;
+    background-color: blue;
+    font-size: 1.5em;
+
+}
+
+#green {
+    font-size: 1rem;
+    width: 10rem;
+    background-color: green;
+}
+/*be careful to don't use px with font-size cause if we wanna get the same font size 
+it will be difficult but we can do it with changing parent font-size or 
+using em unit only or rem*/
+div {
+    margin: 10px;
+    color: white;
+}
+
+p {
+    width: 60ch;
+}
+
+@media screen and (max-width: 600px) {
+    p {
+        width: 30ch;
+    }
+}

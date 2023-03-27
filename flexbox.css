@@ -1,0 +1,140 @@
+div::first-letter {
+    text-transform: uppercase;
+}
+/*
+A layout model, also known as the Flexible Box Layout Module, particularly
+  useful for building responsive designs with row or column layouts.
+  An element can be made a flex container with display: flex,
+  and all of its direct children will automatically be laid out as flex items</b>
+*/
+/*
+flex-direction: Determines which direction is the main-axis, either
+    <span>row</span> or <span>column</span>. Additionally, <span>row-reverse</span>
+    and <span>column-reverse</span> can be used to reverse the order of flex items.
+*/
+
+/*
+
+    justify-content Determines how elements are positioned along the main-axis with
+    possible values of flex-start, flex-end, center,space-around space-between and space-evenly.
+
+*/
+
+/*
+    align-items Determines how elements are positioned along the cross-axis (the
+    one not selected by flex-direction). Possible values are flex-start,
+    flex-end, center, baseline, and stretch.
+  
+*/
+
+/*
+<b>flex-wrap</b>: Determines if flex items can wrap to new lines with possible values
+    of <span>wrap</span> and <span>nowrap</span>. <span>wrap-reverse</span> can also
+    be used to wrap flex items with the lines in reverse order.
+*/
+/*   
+ <b>flex-flow</b>: A shorthand for <span>flex-direction</span> and <span>flex-wrap</span>.
+ flex-flow is another way to express flex-direction and flex wrap on the same declaration
+ exemple: lex-flow: row wrap;
+*/
+
+/*
+    align-content</b>: Determines how lines are positioned along the <b>cross-axis</b>
+    when flex items are wrapping on multiple lines. Possible values are <span>flex-start</span>,
+    <span>flex-end</span>, <span>center</span>, <span>space-around</span>,
+    <span>space-between</span>, and <span>stretch</span>.
+*/
+
+/*
+    order: Moves the flex-item to a different location amongst the other
+    flex items rather than using the order defined in the DOM. All flex items default
+    to having a value of 0. This means a value of -1 would move an item before all
+    other items that have not changed their order. Likewise, a value of 1 would place the item
+    at the end.
+*/
+
+/*
+<b>flex-basis</b>: Sets the initial size of the flex item along the <b>main-axis</b> (essentially
+    this will act as width for the row axis and height for the column axis).
+*/
+
+/**
+<b>flex</b>: A shorthand property for <span>flex-grow</span>, <span>flex-shrink</span>,
+    and <span>flex-basis</span> in that order.
+*/
+section {
+    height: 90vh;
+    border: 2px dotted black;
+    display: flex;
+    /*if we use flex direction: row items inside floxbox will be display on the row*/
+    /*by default the justify-content is flex-start with row and row reverse*/
+    /*flex directon row-reverse the order of items is reverse and justify-content flex start 
+    and flex-end are kind of reverse of flex-start and flex-end with row */
+    /*with flex-direction: row-reverse; the element with justify-content: flex-start; are align on the end
+    and also justify-content: flex-end; items are align on the left side of the file*/
+    flex-direction: row;
+    justify-content: space-evenly;
+    /*align-items align elements through cross axis*/
+    align-items: flex-start;
+    /*gap is used for controlling space between items*/
+    gap: 10px;
+    /*flex-wrap proprety control elements when they are overflowing*/
+    /*fle-wrap: will said that if elements are overflowing go to next line
+    instead of staying on the same line*/
+    flex-wrap: wrap;
+
+    /*flex-flow: ; is a way to declare flex-direction: ; and flex-wrap: ; on the same line*/
+    /*exemple 
+    flex-direction: row;
+    flex-wrap: wrap;
+    is equal to
+    flex-flow: row wrap;
+    */
+    /*if we have multiple lines that we can create with flex-wrap: wrap; 
+    align items can't control how elements are gonna be near each other we can use  align-content 
+    for controlling that
+    */
+    align-content: center;
+
+} 
+
+div {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    padding: 25px;
+    border: 2px solid black;
+}
+
+
+.red {
+    /*we can use order proprety to know how an element is gonna align with others*/
+    /*by default order value is 0 */
+    /*order: 1; says align this item on the end*/
+    /*order -1; says align this element on the start  cause there is no item having order less than this one*/
+    /*flex-grow say an item if it can grow if there is extra spaces if an element is flex-grow: 0; it don't grow if there is
+    extra spaces exemple flex-grow: 1; with this if there is a  line that item nomber don't cover width the red item will grow to occupy 
+    the extra spaces*/
+    background-color: red;
+    height: 30px;
+}
+
+.green {
+    /*if here we have flex-grow: 2; instead of red is having flex-grow: 1; this green will take two part of extra spaces instead of red
+    is taking single part */
+    /*flex basis will be width if flex-direction is row and height if flex direction is column*/
+    /*exemple: flex-basis: 100vw;*/
+    /*flex-shrink is used if an item width is bigger than container width 
+    flex-shrink: 0; the item can overflow the parent width and  flex-shrink: 1; says the item can't overflow*/
+    /*Instead of using flex-grow, flex-shrink and flex-grow we can use flex with three value as
+    flex: 0 1 1OOvw; and the value representation are flex: flex-grow flex-shrink flex basis;
+    */
+    flex-shrink: 1;
+    background-color: green;
+    height: 75px;
+}
+
+.blue {
+    background-color: blue;
+    height: 50px;
+}

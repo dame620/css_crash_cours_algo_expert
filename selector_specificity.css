@@ -1,0 +1,36 @@
+/**
+the algorith used by browser to determine which css declarations to use when 
+an element is selected by two rulesets with the same property.
+we use in priority the most specifique element 
+if those two elements have the same specifity we use the last in the file
+the specificity is roughly calculated by counting the number of each selector type involved in a selector
+and multiplying by a weight. 
+These weights are as follows
+*/
+/**
+-//calculating specificity for selecting 
+ -inline styles equal to css inside html 1000pts
+ -ids 100pts 
+ -classes 10pts
+ -pseudo clases 10pts
+ -attributs 10pts
+ -elements 1pts name of the tag
+ pseudo elements 1pts
+*/
+
+/*1pts elem +10pts class+ 1pts elements total =12pts*/
+section .links a {
+    color: red;
+}
+/*1pts   attr 1Opts  total = 11pts*/
+    a[href="https://algoexper.io"] {
+        color: green;
+    }
+
+/*12 > 11 this is why the second tag is not collored to green*/
+/*
+to avoid specificity and force browser to use an style we use !important
+exemple: a{
+    color: orange !important;
+}
+*/
