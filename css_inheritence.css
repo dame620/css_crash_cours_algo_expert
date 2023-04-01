@@ -1,0 +1,56 @@
+/*How elements choose a value when none has been explicitly declared in any
+stylesheet. All properties are either inherited properties or
+non-inherited properties. Inherited properties will take their
+parent's value in the case no value has been set for the property. Non-inherited
+properties on the other hand will be set to initial in this case.*/
+
+main {
+    color: red;
+    border: 2px solid black;
+}
+
+/*color is inherited proprety that's why the h1 is colored into red but the button was
+not colored into red due to user agent stylesheet*/ 
+
+/*if we wanna modified the user agent proprities to say to the element to inherited the proprity
+from it's parrent we set it like this*/
+
+button {
+    /*
+    <b>inherit</b>: The value should inherit from its parent, regardless of if it
+    is normally an inherited property.
+    */
+    /*color: inherit;
+    /*we can set the inherit value to a proprity that is not inherit at the biggining this will
+    set the parent proprety to the child for exemple  border: inherit; will set the parent border to
+    the child*/
+   /* border: inherit;*/
+   /*
+   <b>initial</b>: The value should be set to the value defined in the CSS specification.
+    Note this is oftentimes different from browser defaults.
+    exemple:*/
+   /* color: initial;*/
+
+   
+   /*
+    <b>unset</b>: The value should be set to <span>inherit</span> if it is normally
+    an inherited property, otherwise <span>initial</span>. This can be useful for
+    "resetting" browser defaults from the user agent stylesheet.
+    this will go to the initial value from the css spec which is initially no border
+    will delete user agent stylesheet if the proprety is not inherit proprety
+   */
+   border: unset;
+
+   /*
+   <b>revert</b>: The value should revert back to the next stylesheet in the cascade.
+    For author stylesheets, this would act as if the author did not write any declaration
+    for the property, but it would still honor the user agent and user stylesheets as normal.
+   */
+   /*border: revert;*/
+
+}
+
+h1 {
+    /*this initial value will delete the inherit even if the tag inherit the value from the parent*/
+    /*color: initial;*/
+}
