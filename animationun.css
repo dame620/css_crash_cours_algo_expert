@@ -1,0 +1,29 @@
+div {
+    width: 30%;
+    padding: 15px;
+    height: 100px;
+    background-color: blue;
+    margin: 40px;
+    height: 6em;
+    border-radius: 12px;
+    /*transition proprety define in which proprety the transition will happen*/
+    transition-property: width;
+    /*transition-duration define how long the transition will happen*/
+    transition-duration: 5s;
+    /*transition-delay define how long we will wait before the transition start*/
+    transition-delay: 0.2s;
+    /*that fonction say us how the transition will happpen it can have lof of proprities */
+    transition-timing-function: steps(6, jump-both);
+    /*we can use a shortned form name transition */
+    transition: transition-property transition-duration transition-timing-function transition-delay;
+    /*here we use shortned way for trasition et say how will the transform happen*/
+    transition: width 1s ease 1s, transform 1s ease 0s;
+}
+
+div:hover {
+    width: 60%;
+    /*the trasform is another way to make transition */
+    transform: rotate(180deg);
+}
+
+/*we close this part and start another one by using animation*/

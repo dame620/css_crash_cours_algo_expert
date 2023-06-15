@@ -51,6 +51,12 @@ body {
     /*justify-items: center*/
     /*place items replace align-items and justify-items*/
     /*place-items: center;*/
+    /*with those proprety
+    align-items: center;
+    justify-items: center;
+    all the elements inside grid container will be place on the center of the grid container
+    here the body not used commonly 
+    */
 
 }
 
@@ -94,8 +100,11 @@ body {
 
         /*we don't use this proprity for now with our layout this is just for knowing*/
         /*justify-self: center;
-        align-self: center;*/
-        /*place-self: center; will replace those two proprities*/
+         align-self: center;*/
+        /*place-self: center; will replace those two proprities
+        this will place an item on the center of it's width and height
+        we can use different value here we see that the item width and height is it's container just
+        */
     }  
 
     footer {

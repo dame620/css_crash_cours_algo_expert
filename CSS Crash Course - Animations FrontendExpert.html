@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>CSS Crash Course - Animations | FrontendExpert</title><meta name="description" content="FrontendExpert's tailored course of fundamental CSS concepts will give you the tools, knowledge, and confidence to tackle any frontend interview."><link rel="canonical" href="https://www.algoexpert.io/frontend/css-crash-course/animations"><link rel="shortcut icon" type="image/png" href="https://assets.algoexpert.io/static/images/main-favicon.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta property="og:title" content="AlgoExpert | Ace the Coding Interviews"><meta property="og:description" content="The leading platform to prepare for coding interviews. Master essential algorithms and data structures, and land your dream job with AlgoExpert."><meta property="og:image" content="https://assets.algoexpert.io/static/images/ae-social-logo.png"><meta property="og:url" content="https://www.algoexpert.io"><meta name="twitter:title" content="AlgoExpert | Ace the Coding Interviews"><meta name="twitter:description" content="The leading platform to prepare for coding interviews. Master essential algorithms and data structures, and land your dream job with AlgoExpert."><meta name="twitter:image" content="https://assets.algoexpert.io/static/images/ae-social-logo-twitter.png"><meta name="twitter:card" content="summary"><meta name="DEFAULT_TOKEN" content="eyJhbGciOiJIUzI1NiIsImtpZCI6IjdjYmM2ZWRhNzk1ZGM1YzMxZjJmOTk2Yzg0ODRkZTRiMGIxOTgwMmVmOTYwOWE3YzJmNDFmM2E0OTVhYjZmN2MiLCJ0eXAiOiJKV1QifQ.eyJTZXNzaW9uSUQiOiI4NTc3NDAyYi03MzlkLTQ3NmItYTM0MS0wZjRmMjJkYjdiNDEiLCJNZXRhZGF0YSI6eyJwYXJ0aXRpb24iOiJtYWluIiwib2F1dGhfcHJvdmlkZXIiOiJkZWZhdWx0Iiwib2F1dGhfdXNlcl9pZCI6ImUzMTkyYjVjLTViYmQtNDIwMC1iZDE4LWU3MGM4ZjhhOTExZiIsImVtYWlsIjoiIiwidXNlcm5hbWUiOiIiLCJuYW1lIjoiIiwiYXZhdGFyX3VybCI6IiIsInJlZ2lvbiI6IlNOIiwicm9sZXMiOiJ1c2VyIn0sIkdlbmVyaWNNZXRhIjp7fSwiZXhwIjo0ODM0MDc3MDE1LCJqdGkiOiI3NDk4ODk4OS00Y2VhLTQ2MTctODIzZC04MmJkNGZjYjVjNjAiLCJpYXQiOjE2ODA0NzcwMTUsImlzcyI6ImFsZ29leHBlcnQiLCJzdWIiOiJkZWZhdWx0fGUzMTkyYjVjLTViYmQtNDIwMC1iZDE4LWU3MGM4ZjhhOTExZiJ9.bDeorg2fvRAT4t763GhhLx8ISa-0ZcjSY1pqi9tNwEY"><link rel="preconnect" href="https://player.vimeo.com/"><link rel="preconnect" href="https://vimeo.com/"><link rel="preconnect" href="https://i.vimeocdn.com/"><link rel="preconnect" href="https://fresnel.vimeocdn.com/"><link rel="preconnect" href="https://assets.algoexpert.io/"><style>/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('https://assets.algoexpert.io/static/fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('https://assets.algoexpert.io/static/fonts/open-sans-v17-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/open-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'),
+       url('https://assets.algoexpert.io/static/fonts/lato-v16-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/lato-v16-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold'), local('Lato-Bold'),
+       url('https://assets.algoexpert.io/static/fonts/lato-v16-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/lato-v16-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* source-code-pro-regular - latin */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Source Code Pro Regular'), local('SourceCodePro-Regular'),
+       url('https://assets.algoexpert.io/static/fonts/source-code-pro-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/source-code-pro-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-code-pro-700 - latin */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
+       url('https://assets.algoexpert.io/static/fonts/source-code-pro-v11-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/source-code-pro-v11-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ubuntu-regular - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+       url('https://assets.algoexpert.io/static/fonts/ubuntu-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/ubuntu-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* ubuntu-700 - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+       url('https://assets.algoexpert.io/static/fonts/ubuntu-v14-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/ubuntu-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* jura-regular - latin */
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(''),
+       url('https://assets.algoexpert.io/static/fonts/jura-v13-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/jura-v13-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* jura-700 - latin */
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''),
+       url('https://assets.algoexpert.io/static/fonts/jura-v13-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('https://assets.algoexpert.io/static/fonts/jura-v13-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}</style><script type="text/javascript" async="" src="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/js.js"></script><script type="text/javascript" async="" src="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/analytics.js"></script><script async="" src="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/gtm.js"></script><script>// See documentation 1) for details.
+      if (!window.location.href.includes('auth-complete')) {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=pGrmsLKCCIHvNpHum0P92w&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','aeDataLayer','GTM-PZK5NHK');
+      }</script><script>window.onerror = function(message, source, lineno, colno, error) {
+      document.getElementById("unsupported-fallback").style.display = "block";
+    };</script><script defer="defer" src="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/ce6646e7b58ccf1f5167.js"></script><script defer="defer" src="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/012c249d5a05b063cac4.js"></script><link href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/2802c744ac0091964ec1.css" rel="stylesheet"><style></style><link rel="stylesheet" type="text/css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/fd85a734598f57e99b1e.css"><link rel="stylesheet" type="text/css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/e3e322b03e4ee3cb7f1d.css"><link rel="stylesheet" type="text/css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/de4fdb541fe3393fcad5.css"><link rel="stylesheet" type="text/css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/4b74f67348344ba0da52.css"><link rel="stylesheet" type="text/css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/eef6ee01fc69893b19d7.css"><link rel="stylesheet" type="text/css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/85b53d4c44a7c31fc9b0.css"><link id="https://assets.algoexpert.io/static/prism-themes/default/main.css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/main.css" rel="stylesheet"><link id="https://assets.algoexpert.io/static/prism-themes/default/line-numbers.css" href="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/line-numbers.css" rel="stylesheet"></head><body class="fe"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZK5NHK&gtm_auth=pGrmsLKCCIHvNpHum0P92w&gtm_preview=env-2&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="unsupported-fallback" style="background-color: #02203c;
+        color: white;
+        font-size: 30px;
+        padding: 0 20px;
+        height: 100vh;
+        line-height: 100vh;
+        text-align: center;
+        display: none;">Unsupported browser. Please try updating your browser.</div><div id="root"><div class="WZBWH_5sUz9uH60_BL_z"><div><div class="announcementsContainer" style="transition: transform 1000ms ease 0s; transform: translateX(-310px);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.88 22.88" fill="currentColor" xml:space="preserve" class="announcementsContainerCross" alt="close announcement cross" aria-label="Close"><path d="M.324 1.909a1.14 1.14 0 0 1 0-1.587 1.14 1.14 0 0 1 1.587 0l9.523 9.539L20.973.322a1.12 1.12 0 0 1 1.571 0 1.112 1.112 0 0 1 0 1.587l-9.523 9.524 9.523 9.539a1.112 1.112 0 0 1 0 1.587 1.12 1.12 0 0 1-1.571 0l-9.539-9.539-9.523 9.539a1.14 1.14 0 0 1-1.587 0c-.429-.444-.429-1.159 0-1.587l9.523-9.539L.324 1.909z"></path></svg><div class="announcementMessagesContainer"></div></div></div><div class="upL1UyraV12QgsUgl4fB oKFDEmU5eIbI0Pf6T94z"> </div><header class="JWKuuzrI8L0Ufl0SkNW8" style=""><div class="E_KJ_QTxuIPTc7RFTyfU"><div class="WyTYS97j1SmU4YBvcFr7"><svg viewBox="10 10 13 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="vElFypfg9bkRoQOlMNqh"><g data-name="hamburger menu"><path d="M21 15H11a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2zM21 19H11a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2zM11 13h10a1 1 0 0 0 0-2H11a1 1 0 0 0 0 2z"></path></g></svg></div><a class="yRKxFqI1ePA53dAZYRj6" href="https://www.algoexpert.io/product"><div class="YpAd87KigbyuvBI8vJVa"><img class="k435ERC9X4gXWx9W2cZI" src="data:image/png;base64,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" style="transform: rotate(146deg);" alt=""><h1 class="iolw0wZbR8tkJipZGbpw">AlgoExpert</h1></div><div class="QBaqMoAriSbm_rB7_Ip7">Ace the Technical Interviews</div></a><div class="zUNn9jlS65bnl9fHD6wo"></div><nav class="BDbPEuw51tslzu7jQSjQ"><div class="IIaBdhC2jDcyifvzE3YK"><button class="EqsUVHTjnc6IwWkIMlpr">Products</button></div><div class="IIaBdhC2jDcyifvzE3YK"><a class="EqsUVHTjnc6IwWkIMlpr undefined" aria-haspopup="true" href="https://www.algoexpert.io/content#frontendexpert">Content</a></div><div class="IIaBdhC2jDcyifvzE3YK"><a class="EqsUVHTjnc6IwWkIMlpr undefined" href="https://www.algoexpert.io/team">Team</a></div><div class="IIaBdhC2jDcyifvzE3YK"><a class="EqsUVHTjnc6IwWkIMlpr undefined" href="https://www.algoexpert.io/purchase#frontendexpert"><i><b>Purchase</b></i></a></div></nav><div class="zUNn9jlS65bnl9fHD6wo"></div><div class="zJkYZlnlp6wgEqWwryuc"><div class="k72cC8dudMrWLRoEYywA"><button class="Lzln8hUFTHRdmIhhyrpY"><img src="CSS%20Crash%20Course%20-%20Animations%20FrontendExpert_fichiers/unnamed.jpg" class="p7xyE17u346UQa1PmugO" alt=""><span class="qUb1ZYcbFlk5kIdRZawz">Heinsenberg</span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 292.362 292.362" xml:space="preserve" class="q1sTXf3TYC5dqZqGFUWd"><path d="M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z"></path></svg></button><div></div></div></div></div><div class="hiqa9dxKiMYJiQtrktFJ"><h1 class="PguMZO22bViGUAVv6cAr">CSS Crash Course</h1><p class="
+        nY_3Mnm8SUH7gBabhMgg
+        gH1Qd2AvV2cOqmXjHG65
+        _1hqItIeCSymQHVi5C1o
+        BncdWYZr_2wTec9oUDDf
+        WWyAmMzBXME0am4Lqwiq
+        H_gYJ5wAowgJY9mrSQ2N
+        dQj57pjtU2OKeEibCucg d6FwdlLmHu0QJIsRMrtY
+    ">The foundational CSS knowledge you need to ace frontend interviews.</p></div></header><div class="E1yoS94mtpK__y6WxJEQ"><div class="luAvK4ElqUuTcgF0fNfN"><span class="CreQ_y5iaqpXi4E4XCvV">GLOSSARY</span></div><div class="dFFHVMqXYxJbxHxdo_Ii NeWEJrkDsv7mO6eVGffx"><div class="ZQTnhEHcZbyXoPjgygVT"><div class="ElSgjig5AMRIiAPRSe6Z"><div class="C77XyYdx2zpsNXtTl47K"><div class="tH6RKlTOqGyFS_LmYYc_"><h3 class="On_tavl6B4NSeBdpRjtb">Course Progress</h3><div class="GN5cfxPvdX4uZrzm2v2b"><div class="tfuqPKv_cppG6tn4pvgC"><svg class="BVHWpbHh7Cp19ES1M70Y" viewBox="0 0 100 100"><circle stroke-width="10" fill="transparent" r="45" cx="50" cy="50" class="ilPpanf0UjmLUnH2JOsJ"></circle><circle stroke="#11967e" stroke-width="8" fill="transparent" r="45" cx="50" cy="50" stroke-dasharray="282.7433388230814 282.7433388230814" stroke-dashoffset="282.7433388230814" stroke-linecap="round" class="m8ZIBXV9J888gkw5nfBx"></circle><text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="uyo1rIkmNKBXwcCCDMOU">0%</text></svg></div></div><div class="fE8Ix57JMJDlmcBrNsqB"><span class="cNn36W5JWR3voUpOgeHM">Videos Watched</span><span class="ZAtNRP7Kp3JcpaNvJxtF">0 / 20</span></div></div><div class="gdNWvEAhy7K0vWKtbNWd"></div><div class="wY9LeHVPXNCZNTBYWPo3"><h3 class="ekZddeKaM6xSrzQhrnc1">Lessons</h3><div class="um9DxlDk7Bt_H47pmslT"><ul class="e8pNc_UI1J8EOzo5O3AV"><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-introduction">1 - Introduction</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-basics">2 - CSS Basics</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/selectors">3 - Selectors</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/pseudo-classes-and-elements">4 - Pseudo Classes And Elements</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/selector-specificity">5 - Selector Specificity</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-units">6 - CSS Units</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/block-vs-inline">7 - Block vs. Inline</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/box-model">8 - Box Model</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/box-sizing">9 - Box Sizing</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/position">10 - Position</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/stacking-contexts">11 - Stacking Contexts</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/flexbox">12 - Flexbox</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-grid">13 - CSS Grid</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/working-with-images">14 - Working With Images</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-inheritance">15 - CSS Inheritance</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/responsive-design">16 - Responsive Design</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU IImBvq7mLgaCl2nkzCY4" href="https://www.algoexpert.io/frontend/css-crash-course/animations" aria-current="page">17 - Animations</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-variables">18 - CSS Variables</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/frameworks-and-preprocessors">19 - Frameworks And Preprocessors</a></li><li class="Zbt8OHTMEwQ8ohLjE0Bl"><a class="SG1QqSMGQKbQW9ddvnrU" href="https://www.algoexpert.io/frontend/css-crash-course/css-methodologies-and-best-practices">20 - CSS Methodologies And Best Practices</a></li></ul></div></div></div></div></div><div class="FHCArcmL6vO6WyLn91vO"><div class="dfm3GpFH_tYK4WF4fyFg rb_CxNrxTP_m40F23eaM C8Q3H_aFKpvkj14qJOu3 nh9iyBIUbLSZuLs6Ca9A" id="Animations"><div class="piNmZTl7VRsdEfRufZ8w"><h2 class="o_yJtP8Y2n1ryVQW3AEv">17 - Animations</h2><div class="Nvx_DqIDZ9VPuigpEVh_ "><div class="ZwXbl8kG58FgFEbaYl_m Or6vV1iBnZbg0LFTTowN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve" fill="currentColor" class="WqkN5LwXaRXfKAalta8j rbT2UyY1Ec3PlQHVG1DT"><path d="M256 0C114.841 0 0 114.841 0 256s114.841 256 256 256 256-114.841 256-256S397.159 0 256 0zm0 468.732c-117.301 0-212.732-95.431-212.732-212.732S138.699 43.268 256 43.268 468.732 138.699 468.732 256 373.301 468.732 256 468.732z"></path><path d="M372.101 248.068H271.144V97.176c0-11.948-9.686-21.634-21.634-21.634s-21.634 9.686-21.634 21.634v172.525c0 11.948 9.686 21.634 21.634 21.634.244 0 .48-.029.721-.036.241.009.477.036.721.036h121.149c11.948 0 21.634-9.686 21.634-21.634s-9.686-21.633-21.634-21.633z"></path></svg></div><span class="f6SGSaP8UBIcwSxGx8ia">13 min</span></div></div><p class="
+        nY_3Mnm8SUH7gBabhMgg
+        gH1Qd2AvV2cOqmXjHG65
+        eNWHleYeh2jssnY_NOtd
+        NezEd_SbRiiz3CgOlx2g
+        WWyAmMzBXME0am4Lqwiq
+        H_gYJ5wAowgJY9mrSQ2N
+        SLSPsur4S4Mk3xbCskmX
+    ">You know all those cool animations that are scattered across the AlgoExpert website? The ones that made you stop and think, "Whoa, that's pretty neat!"
+
+Yeah, they're all CSS.</p><div class="UbmWiQCJdJCS9VLbvFuI UkhXSZRNLgRtJex6MAR9"><iframe class="GjXIOuKyCX9PawMK44G4" src="https://player.vimeo.com/video/648166598?pip=1" allowfullscreen="" allow="autoplay; encrypted-media" loading="lazy" data-ready="true" frameborder="0"></iframe></div><div class="X7hcLnwunF32NA7Nnnh8"><button class="Q8XyeTOXgs7cxjiUKnSN"><svg viewBox="-21 -37 681.333 681" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="GRU8OBfdveQOHzNcu92I"><path d="M634.07 67.637 570.191 3.762c-6.226-6.23-16.332-6.239-22.566-.008 0 .004-.004.008-.012.008L355.993 195.39a15.944 15.944 0 0 0-4.677 11.285v63.879c0 8.816 7.149 15.965 15.965 15.965h63.88c4.234 0 8.292-1.68 11.284-4.676L634.07 90.219c6.235-6.23 6.239-16.336.012-22.57-.004 0-.004-.008-.012-.012zM424.547 254.586H383.25v-41.293L558.906 37.637 600.2 78.93zm0 0"></path><path d="M590.84 190.71c-8.817 0-15.965 7.15-15.965 15.966v223.562c-.027 26.446-21.46 47.88-47.906 47.91H367.28a15.876 15.876 0 0 0-9.582 3.192L255.5 557.992v-63.875c0-8.82-7.148-15.969-15.969-15.969H79.844c-26.446-.03-47.88-21.464-47.903-47.906V142.801c.028-26.442 21.457-47.875 47.903-47.903H367.28c8.82 0 15.969-7.148 15.969-15.968 0-8.817-7.148-15.965-15.969-15.965H79.844C35.766 63.008.043 98.73 0 142.8v287.441c.043 44.074 35.766 79.797 79.844 79.844h143.719v79.844c0 8.816 7.148 15.965 15.968 15.965 3.457 0 6.817-1.122 9.582-3.192l123.508-92.621H526.97c44.078-.043 79.797-35.766 79.843-79.844V206.68c0-8.82-7.152-15.97-15.972-15.97zm0 0"></path><path d="M271.465 158.773h-159.68c-8.824 0-15.972 7.149-15.972 15.97 0 8.816 7.148 15.964 15.972 15.964h159.68c8.82 0 15.973-7.148 15.973-15.965 0-8.82-7.153-15.969-15.973-15.969zM111.785 286.523h159.68c8.82 0 15.972-7.152 15.972-15.968 0-8.82-7.152-15.97-15.972-15.97h-159.68c-8.824 0-15.973 7.15-15.973 15.97 0 8.816 7.149 15.968 15.973 15.968zM111.785 382.332h383.246c8.82 0 15.965-7.148 15.965-15.969 0-8.816-7.148-15.965-15.965-15.965H111.785c-8.824 0-15.973 7.149-15.973 15.965 0 8.82 7.149 15.969 15.973 15.969zm0 0"></path></svg><span class="uDCTuu_SsTD3SdSl2ygs">Feedback</span></button><button class="Q8XyeTOXgs7cxjiUKnSN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.333 469.333" fill="currentColor" xml:space="preserve" class="GRU8OBfdveQOHzNcu92I"><path d="M160 0H10.667A10.66 10.66 0 0 0 0 10.667V160a10.66 10.66 0 0 0 10.667 10.667H32A10.66 10.66 0 0 0 42.667 160V42.667H160A10.66 10.66 0 0 0 170.667 32V10.667A10.66 10.66 0 0 0 160 0zM458.667 0H309.333a10.66 10.66 0 0 0-10.667 10.667V32a10.66 10.66 0 0 0 10.667 10.667h117.333V160a10.66 10.66 0 0 0 10.667 10.667h21.333A10.66 10.66 0 0 0 469.333 160V10.667A10.66 10.66 0 0 0 458.667 0zM458.667 298.667h-21.333a10.66 10.66 0 0 0-10.667 10.667v117.333H309.333a10.66 10.66 0 0 0-10.667 10.667v21.333a10.66 10.66 0 0 0 10.667 10.667h149.333a10.66 10.66 0 0 0 10.667-10.667V309.333a10.66 10.66 0 0 0-10.666-10.666zM160 426.667H42.667V309.333A10.66 10.66 0 0 0 32 298.666H10.667A10.662 10.662 0 0 0 0 309.333v149.333a10.66 10.66 0 0 0 10.667 10.667H160a10.66 10.66 0 0 0 10.667-10.667v-21.333A10.66 10.66 0 0 0 160 426.667z"></path></svg><span class="uDCTuu_SsTD3SdSl2ygs">Code-Editor Mode</span></button><div class="u-flexSpacer"></div><div class="nnswte9ZkJKOhFZdsFX0"><input type="checkbox" id="mark-as-watched-Animations" class="u7jtw1Ft3854z9w2vfmN"><label for="mark-as-watched-Animations" class="QNGEMIIKkqRYWxFCdDAz">Mark As Watched</label><div class="dDQuMZBzokPLd2gTMZpQ"></div></div></div><div class="dy34f9gOaHIOhEP4eqJS"><h3 class="fLdi7FLrfqQAz4cXWmSX">Key Terms</h3><ul class="HjzG90RhXGGIYivPt7fv"><li><h4 class="MeFGWxW4GIK5soMCM_Qe">Transitions</h4><div class="wER9hC6Ayr8OWkXr4hrQ default"><div class="html">
+<p>
+  A css module for smoothly transitioning between values when a value is
+  changed. Transitions can be defined with a combination of these properties:
+</p>
+
+
+<ul>
+  <li>
+    <b>transition-property</b>: The name of the CSS property to transition.
+  </li>
+  <li>
+    <b>transition-duration</b>: How long the transition should take.
+  </li>
+  <li>
+    <b>transition-timing-function</b>: How the transition should progress.
+    This can take a variety of keyword values, such as <span>linear</span>
+    and <span>ease-in</span>, or custom values using the <span>cubic-bezier()</span>
+    or <span>steps()</span> functions.
+  </li>
+  <li>
+    <b>transition-delay</b>: How long to wait before starting the transition.
+  </li>
+</ul>
+
+
+<p>
+  Alternatively, the <span>transition</span> property can be used as a shorthand
+  for all of these values. The first time value will be used for the duration,
+  and the second will be used for a delay. Other than that, the order does not
+  matter.
+</p>
+
+
+<p>
+  For example, this would set the width to smoothly transition linearly over
+  one second, two seconds after the value is changed:
+</p>
+</div>
+
+<div class="code-wrapper prism">
+  <pre class="line-numbers language-css" tabindex="0"><code class="language-css"><span class="token property">transition</span><span class="token punctuation">:</span> width 1s linear 2s<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</div></div><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions" target="_blank" class="mIbssb657Yg6sEDYNXbC" rel="noreferrer">Learn more: <span class="Link Link--fe GgbfIB2K5OJlLnFrm_xf">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions</span></a></li><li><h4 class="MeFGWxW4GIK5soMCM_Qe">Animations</h4><div class="wER9hC6Ayr8OWkXr4hrQ default"><div class="html">
+<p>
+  A css module for animating properties, very similar to <b>transitions</b>,
+  but with a bit more control. An animation is defined using <b>keyframes</b>
+  as well as these properties:
+</p>
+
+<ul>
+  <li>
+    <b>animation-name</b>: The name of the <b>keyframes</b> animation.
+  </li>
+  <li>
+    <b>animation-duration</b>: How long the animation should take.
+  </li>
+  <li>
+    <b>animation-fill-mode</b>: If the element should stay in its animated position
+    after the animation completes or if it should move to the starting position of
+    the animation before it begins, specified with the <span>backwards</span>
+    and <span>forwards</span> values respectively or <span>both</span> to follow
+    the rules of both values.
+  </li>
+  <li>
+    <b>animation-direction</b>: If the animation should play in <span>normal</span>
+    or <span>reverse</span> order. A value of <span>alternate</span> can also be
+    used to switch between normal and reverse, or <span>alternate-reverse</span>
+    can be used to do the same, but starting with the reverse direction.
+  </li>
+  <li>
+    <b>animation-iteration-count</b>: How many times to run the animation, or <span>infinite</span>
+    to run the animation indefinitely.
+  </li>
+  <li>
+    <b>animation-play-state</b>: If the animation is currently <span>running</span>
+    or <span>paused</span>. This is particularly useful for pausing an animation
+    using JavaScript.
+  </li>
+  <li>
+    <b>animation-timing-function</b>: How the animation should progress through the
+    keyframes. This can take a variety of keyword values, such as <span>linear</span>
+    and <span>ease-in</span>, or custom values using the <span>cubic-bezier()</span>
+    or <span>steps()</span> functions.
+  </li>
+  <li>
+    <b>animation-delay</b>: How long to wait before starting the animation.
+  </li>
+</ul>
+
+<p>
+  Alternatively, the <span>animation</span> property can be used as a shorthand
+  for all of these values. The first time value will be used for the duration,
+  and the second will be used for a delay. Other than that, the order usually will
+  not matter assuming the <span>animation-name</span> is not using a conflicting
+  keyword with another possible value.
+</p>
+
+<p>
+  For example after a two second delay, this would run the move animation over three seconds
+  with the ease timing function. The animation would continue to run indefinitely, alternating the order
+  each time.
+</p>
+</div>
+
+<div class="code-wrapper prism">
+  <pre class="line-numbers language-css" tabindex="0"><code class="language-css"><span class="token property">animation</span><span class="token punctuation">:</span> move 3s ease infinite alternate 2s<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</div></div><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations" target="_blank" class="mIbssb657Yg6sEDYNXbC" rel="noreferrer">Learn more: <span class="Link Link--fe GgbfIB2K5OJlLnFrm_xf">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations</span></a></li><li><h4 class="MeFGWxW4GIK5soMCM_Qe">@keyframes</h4><div class="wER9hC6Ayr8OWkXr4hrQ default"><div class="html">
+<p>
+  A keyword for defining points within an animation timeline. An animation is made
+  up of a variety of keyframes, and the browser will fill in the spaces between the
+  keyframes based on the timing function. Keyframes are defined using this syntax:
+</p>
+</div>
+
+<div class="code-wrapper prism">
+  <pre class="line-numbers language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> animation-name</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span>
+    <span class="token property">property</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+    <span class="token property">property</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">50%</span> <span class="token punctuation">{</span>
+    <span class="token property">property</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+    <span class="token property">property</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">to</span> <span class="token punctuation">{</span>
+    <span class="token property">property</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+    <span class="token property">property</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</div>
+
+<div class="html">
+<p>
+  The <span>from</span> and <span>to</span> keywords are equivalent to <span>0%</span>
+  and <span>100%</span> respectively.
+</p>
+</div></div><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes" target="_blank" class="mIbssb657Yg6sEDYNXbC" rel="noreferrer">Learn more: <span class="Link Link--fe GgbfIB2K5OJlLnFrm_xf">https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes</span></a></li></ul></div></div></div><div class="Sv06H5NAyK3qjquKPWBJ"><div class="jkEIIrrLy8qVx30gkEaG"><a class="z2_KwQIzGPmRBDyUvLZ7" href="https://www.algoexpert.io/frontend/css-crash-course/responsive-design"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 400.004 400.004" xml:space="preserve" class="RbLPu3SjEVUpJFpZpb6c tb7RW5PW8zpKRGmXRlak"><path d="M382.688 182.686H59.116l77.209-77.214c6.764-6.76 6.764-17.726 0-24.485-6.764-6.764-17.73-6.764-24.484 0L5.073 187.757c-6.764 6.76-6.764 17.727 0 24.485l106.768 106.775a17.252 17.252 0 0 0 12.242 5.072c4.43 0 8.861-1.689 12.242-5.072 6.764-6.76 6.764-17.726 0-24.484l-77.209-77.218h323.572c9.562 0 17.316-7.753 17.316-17.315 0-9.562-7.753-17.314-17.316-17.314z"></path></svg><div class="zm0kFATucRJB0INlue9G"><div class="BuSz5SNnwBSNqbqSMign">Lesson 16</div>Responsive Design</div></a><div class="u-flexSpacer"></div><a class="z2_KwQIzGPmRBDyUvLZ7" href="https://www.algoexpert.io/frontend/css-crash-course/css-variables"><div class="RrW_nPgMu1h3ssg9Go_2"><div class="BuSz5SNnwBSNqbqSMign">Lesson 18</div>CSS Variables</div><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 268.832 268.832" xml:space="preserve" class="RbLPu3SjEVUpJFpZpb6c EM0zCln_8bnFaNouewoQ"><path d="m265.171 125.577-80-80c-4.881-4.881-12.797-4.881-17.678 0-4.882 4.882-4.882 12.796 0 17.678l58.661 58.661H12.5c-6.903 0-12.5 5.597-12.5 12.5 0 6.902 5.597 12.5 12.5 12.5h213.654l-58.659 58.661c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.439 5.64 3.661 8.839 3.661s6.398-1.222 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z"></path></svg></a></div></div></div></div><footer><div class="fkFDpGGvf3xogvmYblF0"></div><div class="TMtSG4bES3cAiE9fdV3w"><div class="ZXdQ7Hmza4W2_4n2QZ4Z"><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/help">Contact Us</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/help">FAQ</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/reviews">Reviews</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/blog">Blog</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/jobs">Jobs</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/swe-project-contests">SWE Project Contests</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/legal">Legal Stuff</a><div class="P2saX4wFxJXTsHYfTBhO REBZDd5a9clFLDktPwhg"></div><a class="VQgPibImGI2gcY7StoWE NWSbUJOHQkS0KgiOdiCE" href="https://www.algoexpert.io/privacy">Privacy Policy</a></div><div class="DpO2cjHpgo16yvFlAgC2 gzVbdUsyGbl7bTfNm0KC">Copyright © 2017-2023 AlgoExpert LLC. All rights reserved.</div></div></footer></div></div></body></html>

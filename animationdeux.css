@@ -1,0 +1,35 @@
+div {
+    width: 30%;
+    padding: 15px;
+    height: 100px;
+    background-color: blue;
+    margin: 40px;
+    height: 6em;
+    border-radius: 12px;
+    animation-name: move;
+    animation-duration: 3s;
+    /* this is to define where the element could stay at the of the animation*/
+    /*with value forwards it could stay where it was at the end of the animation*/
+   animation-fill-mode: forwards; 
+   /*animation direction says in which direction the animation could happen */
+   animation-direction: reverse;
+
+   /*animation-iteration-count says how many time the animation could happen*/
+   /*with infinite value the iteration will happen infinitly*/
+   animation-iteration-count: infinite;
+   /*with this value the animation will stop at one point if value is paused*/
+   animation-play-state: paused;
+   /*with this value the animation will continue running*/
+   animation-play-state: running; 
+}
+
+@keyframes move {
+    50% {
+        transform: translate(200px, 0px);
+    }
+
+    100% {
+        transform: translate(200px, 300px);
+    }
+    
+} 
